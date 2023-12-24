@@ -36,6 +36,7 @@ struct DetailView: View {
                 }
             }
         }
+        .navigationTitle(item.name.components(separatedBy: ".").first ?? "")
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  Model.swift
 //  PicVidExplore
 //
 //  Created by Nguyễn Hải Âu   on 23/12/2023.

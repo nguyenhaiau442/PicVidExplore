@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    private let itemWidth = (AppConstants.screenWidth - 30) / 2
     @State private var items: [Model] = Model.allItem
     @State private var itemHeightCaches: [Int: CGFloat] = [:]
     @ObservedObject private var videoStateManager = VideoStateManager()
@@ -24,7 +25,7 @@ struct HomeView: View {
                                     Color.clear
                                         .onAppear {
                                             let aspectRatio = item.width / item.height
-                                            let calculatedHeight = ((UIScreen.main.bounds.width - 30) / 2) / aspectRatio
+                                            let calculatedHeight = itemWidth / aspectRatio
                                             itemHeightCaches[item.id] = calculatedHeight
                                         }
                                 }
@@ -37,14 +38,15 @@ struct HomeView: View {
                                     Color.clear.preference(key: ViewOffsetKey.self, value: -geometry.frame(in: .named("scroll")).origin.y)
                                         .onAppear {
                                             let aspectRatio = item.width / item.height
-                                            let calculatedHeight = ((UIScreen.main.bounds.width - 30) / 2) / aspectRatio
+                                            let calculatedHeight = itemWidth / aspectRatio
                                             itemHeightCaches[item.id] = calculatedHeight
                                         }
                                 }
                             )
                             .frame(height: itemHeightCaches[item.id])
                             .onPreferenceChange(ViewOffsetKey.self) { offset in
-                                let shouldPlay = offset >= -480 && offset <= (itemHeightCaches[item.id] ?? 0) * 2 / 3
+                                let visibleScreen = AppConstants.screenHeight - AppConstants.navigationBarHeight - AppConstants.tabBarHeight
+                                let shouldPlay = offset >= -(visibleScreen - (itemHeightCaches[item.id] ?? 0) * 1 / 3) && offset <= (itemHeightCaches[item.id] ?? 0) * 2 / 3
                                 videoStateManager.setPlaying(shouldPlay, for: item)
                             }
                     case .unknown:

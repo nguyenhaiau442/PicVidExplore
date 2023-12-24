@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3599C9C42B385D16003B28FD /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3599C9C32B385D16003B28FD /* AppConstants.swift */; };
 		35D1B6D42B36CB5800735B07 /* PicVidExploreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D1B6D32B36CB5800735B07 /* PicVidExploreApp.swift */; };
 		35D1B6D62B36CB5800735B07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D1B6D52B36CB5800735B07 /* ContentView.swift */; };
 		35D1B6D82B36CB5A00735B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D1B6D72B36CB5A00735B07 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3599C9C32B385D16003B28FD /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		35D1B6D02B36CB5800735B07 /* PicVidExplore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicVidExplore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D1B6D32B36CB5800735B07 /* PicVidExploreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicVidExploreApp.swift; sourceTree = "<group>"; };
 		35D1B6D52B36CB5800735B07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				35D1B76D2B36D1CC00735B07 /* AppDelegate.swift */,
 				35D1B6D32B36CB5800735B07 /* PicVidExploreApp.swift */,
 				35D1B6D52B36CB5800735B07 /* ContentView.swift */,
+				3599C9C32B385D16003B28FD /* AppConstants.swift */,
 				35D1B6D72B36CB5A00735B07 /* Assets.xcassets */,
 				35D1B6D92B36CB5A00735B07 /* Preview Content */,
 			);
@@ -453,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3599C9C42B385D16003B28FD /* AppConstants.swift in Sources */,
 				35D1B75A2B36CD8D00735B07 /* VideoStateManager.swift in Sources */,
 				35D1B6D62B36CB5800735B07 /* ContentView.swift in Sources */,
 				35D1B6D42B36CB5800735B07 /* PicVidExploreApp.swift in Sources */,

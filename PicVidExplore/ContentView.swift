@@ -34,7 +34,7 @@ struct ContentView: View {
             CustomTabBar()
         }
         .ignoresSafeArea()
-        .preferredColorScheme(.dark)
+        //.preferredColorScheme(.light)
     }
     
     /// Custom Tab Bar
@@ -70,6 +70,7 @@ struct ContentView: View {
                 }
             }
         }
+        .frame(height: AppConstants.tabBarHeight)
     }
 }
 

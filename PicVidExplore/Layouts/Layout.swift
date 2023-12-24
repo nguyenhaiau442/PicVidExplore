@@ -21,33 +21,28 @@ struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
         self.spacing = spacing
     }
     
-    private func setUpItems() -> [[T]] {
-        var gridArray: [[T]] = Array(repeating: [], count: columns)
-        var currentIndex: Int = 0
-        
-        for item in items {
-            gridArray[currentIndex].append(item)
-            if currentIndex == (columns - 1) {
-                currentIndex = 0
-            } else {
-                currentIndex += 1
-            }
-        }
-        return gridArray
-    }
-    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             HStack(alignment: .top, spacing: spacing) {
-                ForEach(setUpItems(), id: \.self) { columnsData in
+                ForEach(setUpItems(), id: \.self) { columnData in
                     VStack(spacing: spacing) {
-                        ForEach(Array(columnsData.enumerated()), id: \.element.id) { index, item in
-                            content(index, item)
+                        ForEach(columnData) { item in
+                            content(item.id as! Int, item)
                         }
                     }
                 }
             }
             .padding(.vertical)
         }
+    }
+    
+    private func setUpItems() -> [[T]] {
+        var gridArray: [[T]] = Array(repeating: [], count: columns)
+        var currentIndex: Int = 0
+        for item in items {
+            gridArray[currentIndex].append(item)
+            currentIndex = (currentIndex + 1) % columns
+        }
+        return gridArray
     }
 }
