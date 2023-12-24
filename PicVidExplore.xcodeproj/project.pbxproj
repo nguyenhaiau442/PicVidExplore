@@ -186,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				35D1B6E12B36CBE400735B07 /* Resources */,
-				35D1B75C2B36CDBE00735B07 /* Layoutsss */,
+				35D1B75C2B36CDBE00735B07 /* Layouts */,
 				35D1B7542B36CD2E00735B07 /* Managers */,
 				35D1B7482B36CC4A00735B07 /* Extensions */,
 				35D1B74D2B36CC9D00735B07 /* Models */,
@@ -324,13 +324,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		35D1B75C2B36CDBE00735B07 /* Layoutsss */ = {
+		35D1B75C2B36CDBE00735B07 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
 				35D1B75D2B36CDE600735B07 /* Layout.swift */,
 			);
-			name = Layoutsss;
-			path = "Layoút";
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

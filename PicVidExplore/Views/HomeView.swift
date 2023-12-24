@@ -9,32 +9,37 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var items: [Model] = Model.allItem
-    @State private var videoHeight: CGFloat = 0
-    @State private var videoHeightCaches: [CGFloat?] = Array(repeating: nil, count: Model.allItem.count)
+    @State private var itemHeightCaches: [CGFloat] = Array(repeating: 0, count: Model.allItem.count)
     @ObservedObject private var videoStateManager = VideoStateManager()
     
     var body: some View {
         NavigationStack {
             Layout(columns: 2, items: items, spacing: 10) { index, item in
                 NavigationLink(destination: DetailView(item: item)) {
-                    if item.getType() == .image {
+                    switch item.getType() {
+                    case .image:
                         ImageView(image: item)
-                    } else {
+                    case .video:
                         VideoPlayerView(video: item, videoCacheManager: VideoCacheManager.shared, videoStateManager: videoStateManager)
-                            .frame(height: videoHeightCaches[index] ?? videoHeight)
-                            .onAppear {
-                                videoHeight = ((UIScreen.main.bounds.width - 30) / 2) / item.aspectRatio
-                                videoHeightCaches[index] = videoHeight
-                            }
                             .background(
-                                GeometryReader(content: { geometry in
+                                GeometryReader { geometry in
                                     Color.clear.preference(key: ViewOffsetKey.self, value: -geometry.frame(in: .named("scroll")).origin.y)
-                                })
+                                        .onAppear {
+                                            let calculatedHeight = ((UIScreen.main.bounds.width - 30) / 2) / item.aspectRatio
+                                            itemHeightCaches[index] = calculatedHeight
+                                        }
+                                }
                             )
+                            .frame(height: itemHeightCaches[index])
                             .onPreferenceChange(ViewOffsetKey.self) { offset in
-                                let shouldPlay = offset >= -480 && offset <= (videoHeightCaches[index] ?? 0) * 2 / 3
+                                let shouldPlay = offset >= -480 && offset <= itemHeightCaches[index] * 2 / 3
                                 videoStateManager.setPlaying(shouldPlay, for: item)
                             }
+                            .onAppear {
+                                print(index)
+                            }
+                    case .unknown:
+                        EmptyView()
                     }
                 }
                 .buttonStyle(StaticButtonStyle())
@@ -44,6 +49,13 @@ struct HomeView: View {
             .navigationTitle(Tab.all.title)
             .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+
+struct ImageView2: View {
+    var body: some View {
+        Rectangle()
+            .foregroundColor(.blue)
     }
 }
 

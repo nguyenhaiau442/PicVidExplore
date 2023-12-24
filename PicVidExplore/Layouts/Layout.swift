@@ -51,7 +51,3 @@ struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
         }
     }
 }
-
-#Preview {
-    ContentView()
-}
