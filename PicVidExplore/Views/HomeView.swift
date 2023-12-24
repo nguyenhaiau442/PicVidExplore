@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var items: [Model] = Model.allItem
-    @State private var itemHeightCaches: [CGFloat] = Array(repeating: 0, count: Model.allItem.count)
+    @State private var itemHeightCaches: [Int: CGFloat] = [:]
     @ObservedObject private var videoStateManager = VideoStateManager()
     
     var body: some View {
@@ -19,24 +19,33 @@ struct HomeView: View {
                     switch item.getType() {
                     case .image:
                         ImageView(image: item)
+                            .background(
+                                GeometryReader { geometry in
+                                    Color.clear
+                                        .onAppear {
+                                            let aspectRatio = item.width / item.height
+                                            let calculatedHeight = ((UIScreen.main.bounds.width - 30) / 2) / aspectRatio
+                                            itemHeightCaches[item.id] = calculatedHeight
+                                        }
+                                }
+                            )
+                            .frame(height: itemHeightCaches[item.id])
                     case .video:
                         VideoPlayerView(video: item, videoCacheManager: VideoCacheManager.shared, videoStateManager: videoStateManager)
                             .background(
                                 GeometryReader { geometry in
                                     Color.clear.preference(key: ViewOffsetKey.self, value: -geometry.frame(in: .named("scroll")).origin.y)
                                         .onAppear {
-                                            let calculatedHeight = ((UIScreen.main.bounds.width - 30) / 2) / item.aspectRatio
-                                            itemHeightCaches[index] = calculatedHeight
+                                            let aspectRatio = item.width / item.height
+                                            let calculatedHeight = ((UIScreen.main.bounds.width - 30) / 2) / aspectRatio
+                                            itemHeightCaches[item.id] = calculatedHeight
                                         }
                                 }
                             )
-                            .frame(height: itemHeightCaches[index])
+                            .frame(height: itemHeightCaches[item.id])
                             .onPreferenceChange(ViewOffsetKey.self) { offset in
-                                let shouldPlay = offset >= -480 && offset <= itemHeightCaches[index] * 2 / 3
+                                let shouldPlay = offset >= -480 && offset <= (itemHeightCaches[item.id] ?? 0) * 2 / 3
                                 videoStateManager.setPlaying(shouldPlay, for: item)
-                            }
-                            .onAppear {
-                                print(index)
                             }
                     case .unknown:
                         EmptyView()
@@ -52,17 +61,11 @@ struct HomeView: View {
     }
 }
 
-struct ImageView2: View {
-    var body: some View {
-        Rectangle()
-            .foregroundColor(.blue)
-    }
-}
-
 struct ImageView: View {
     let image: Model
     var body: some View {
-        if let imageUrl = Bundle.main.url(forResource: image.name, withExtension: image.type),
+        let components = image.name.components(separatedBy: ".")
+        if let imageUrl = Bundle.main.url(forResource: components.first, withExtension: components.last),
            let imageData = try? Data(contentsOf: imageUrl),
            let uiImage = UIImage(data: imageData) {
             Image(uiImage: uiImage)

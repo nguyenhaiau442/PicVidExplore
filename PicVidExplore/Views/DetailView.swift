@@ -13,8 +13,9 @@ struct DetailView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 10) {
+                let components = item.name.components(separatedBy: ".")
                 if item.getType() == .image,
-                   let imageUrl = Bundle.main.url(forResource: item.name, withExtension: item.type),
+                   let imageUrl = Bundle.main.url(forResource: components.first, withExtension: components.last),
                    let imageData = try? Data(contentsOf: imageUrl),
                    let uiImage = UIImage(data: imageData) {
                     Image(uiImage: uiImage)
@@ -35,7 +36,6 @@ struct DetailView: View {
                 }
             }
         }
-        
     }
 }
 

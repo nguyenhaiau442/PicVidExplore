@@ -16,13 +16,15 @@ enum ModelType {
 struct Model: Codable, Hashable, Identifiable {
     let id: Int
     let name: String
-    let type: String
-    let aspectRatio: Double
+    let width: Double
+    let height: Double
+    let duration: Double?
     
     static let allItem: [Model] = Bundle.main.decode(file: "Data.json")
     
     func getType() -> ModelType {
-        switch type {
+        let components = name.components(separatedBy: ".")
+        switch components.last {
         case "jpg":
             return .image
         case "mp4":

@@ -70,35 +70,36 @@ class VideoPlayerUIView: UIView {
     }
     
     private func setupViews() async throws {
-        guard let videoURL = Bundle.main.url(forResource: video.name, withExtension: video.type) else { return }
+        let components = video.name.components(separatedBy: ".")
+        guard let videoURL = Bundle.main.url(forResource: components.first, withExtension: components.last) else { return }
         Task {
             let asset = try await videoCacheManager.getVideoAsset(for: videoURL)
             layer.cornerRadius = 16
             layer.masksToBounds = true
             try await setupPlayer(asset: asset)
-            if let timeDisplay = try await getVideoDuration(asset: asset) {
-                let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 15, weight: .medium)]
-                let timeSize = (timeDisplay as NSString).size(withAttributes: attributes)
-                addSubview(timeView)
-                timeView.addSubview(timeLabel)
-                timeLabel.text = timeDisplay
-                NSLayoutConstraint.activate([
-                    timeView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-                    timeView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-                    timeView.widthAnchor.constraint(equalToConstant: timeSize.width + 16),
-                    timeView.heightAnchor.constraint(equalToConstant: timeSize.height + 8),
-                    timeLabel.centerXAnchor.constraint(equalTo: timeView.centerXAnchor),
-                    timeLabel.centerYAnchor.constraint(equalTo: timeView.centerYAnchor)
-                ])
-            }
+            let timeDisplay = getTimeDisplay()
+            let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 15, weight: .medium)]
+            let timeSize = (timeDisplay as NSString).size(withAttributes: attributes)
+            addSubview(timeView)
+            timeView.addSubview(timeLabel)
+            timeLabel.text = timeDisplay
+            NSLayoutConstraint.activate([
+                timeView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+                timeView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+                timeView.widthAnchor.constraint(equalToConstant: timeSize.width + 16),
+                timeView.heightAnchor.constraint(equalToConstant: timeSize.height + 8),
+                timeLabel.centerXAnchor.constraint(equalTo: timeView.centerXAnchor),
+                timeLabel.centerYAnchor.constraint(equalTo: timeView.centerYAnchor)
+            ])
         }
     }
     
-    private func getVideoDuration(asset: AVAsset) async throws -> String? {
-        let duration = try await asset.load(.duration)
-        let seconds = CMTimeGetSeconds(duration)
-        let minutes = Int(seconds / 60)
-        let secondsRemainder = Int(seconds.truncatingRemainder(dividingBy: 60))
+    private func getTimeDisplay() -> String {
+        guard let duration = video.duration else { 
+            return ""
+        }
+        let minutes = Int(duration / 60)
+        let secondsRemainder = Int(duration.truncatingRemainder(dividingBy: 60))
         return "\(minutes):\(String(format: "%02d", secondsRemainder))"
     }
     
@@ -142,4 +143,8 @@ class VideoPlayerUIView: UIView {
     func pauseVideo() {
         self.player?.pause()
     }
+}
+
+#Preview {
+    ContentView()
 }

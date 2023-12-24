@@ -1,302 +1,313 @@
 [
     {
         "id": 1,
-        "name": "image1",
-        "type": "jpg",
-        "aspectRatio": 0.5723172628
+        "name": "image1.jpg",
+        "width": 736,
+        "height": 1286
     },
     {
         "id": 2,
-        "name": "image2",
-        "type": "jpg",
-        "aspectRatio": 1
+        "name": "image2.jpg",
+        "width": 800,
+        "height": 800
     },
     {
         "id": 3,
-        "name": "image3",
-        "type": "jpg",
-        "aspectRatio": 0.5628742515
+        "name": "image3.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 4,
-        "name": "image4",
-        "type": "jpg",
-        "aspectRatio": 0.4626743232
+        "name": "image4.jpg",
+        "width": 564,
+        "height": 1219
     },
     {
         "id": 5,
-        "name": "image5",
-        "type": "jpg",
-        "aspectRatio": 0.75
+        "name": "image5.jpg",
+        "width": 564,
+        "height": 752
     },
     {
         "id": 6,
-        "name": "video1",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video1.mp4",
+        "width": 720,
+        "height": 1280,
+        "duration": 11
     },
     {
         "id": 7,
-        "name": "image6",
-        "type": "jpg",
-        "aspectRatio": 1
+        "name": "image6.jpg",
+        "width": 564,
+        "height": 564
     },
     {
         "id": 8,
-        "name": "image7",
-        "type": "jpg",
-        "aspectRatio": 0.5634365634
+        "name": "image7.jpg",
+        "width": 564,
+        "height": 1001
     },
     {
         "id": 9,
-        "name": "image8",
-        "type": "jpg",
-        "aspectRatio": 0.7496671105
+        "name": "image8.jpg",
+        "width": 563,
+        "height": 751
     },
     {
         "id": 10,
-        "name": "image9",
-        "type": "jpg",
-        "aspectRatio": 0.4630541872
+        "name": "image9.jpg",
+        "width": 564,
+        "height": 1218
     },
     {
         "id": 30,
-        "name": "video5",
-        "type": "mp4",
-        "aspectRatio": 0.8
+        "name": "video5.mp4",
+        "width": 640,
+        "height": 800,
+        "duration": 41
     },
     {
         "id": 11,
-        "name": "image10",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image10.jpg",
+        "width": 564,
+        "height": 1252
     },
     {
         "id": 12,
-        "name": "image11",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image11.jpg",
+        "width": 563,
+        "height": 846
     },
     {
         "id": 31,
-        "name": "video6",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video6.mp4",
+        "width": 576,
+        "height": 1024,
+        "duration": 12
     },
     {
         "id": 13,
-        "name": "image12",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image12.jpg",
+        "width": 564,
+        "height": 564
     },
     {
         "id": 14,
-        "name": "image13",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image13.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 15,
-        "name": "image14",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image14.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 16,
-        "name": "image15",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image15.jpg",
+        "width": 551,
+        "height": 979
     },
     {
         "id": 17,
-        "name": "video2",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video2.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 13
     },
     {
         "id": 18,
-        "name": "image16",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image16.jpg",
+        "width": 564,
+        "height": 1126
     },
     {
         "id": 19,
-        "name": "image17",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image17.jpg",
+        "width": 564,
+        "height": 1126
     },
     {
         "id": 20,
-        "name": "image18",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image18.jpg",
+        "width": 564,
+        "height": 564
     },
     {
         "id": 21,
-        "name": "image19",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image19.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 22,
-        "name": "image20",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image20.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 23,
-        "name": "video3",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video3.mp4",
+        "width": 720,
+        "height": 1280,
+        "duration": 10
     },
     {
         "id": 24,
-        "name": "image21",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image21.jpg",
+        "width": 564,
+        "height": 1001
     },
     {
         "id": 25,
-        "name": "image22",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image22.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 26,
-        "name": "image23",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image23.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 27,
-        "name": "image24",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image24.jpg",
+        "width": 564,
+        "height": 752
     },
     {
         "id": 28,
-        "name": "image25",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image25.jpg",
+        "width": 564,
+        "height": 704
     },
     {
         "id": 29,
-        "name": "video4",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video4.mp4",
+        "width": 720,
+        "height": 1280,
+        "duration": 12
     },
     {
         "id": 32,
-        "name": "image26",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image26.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 33,
-        "name": "image27",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image27.jpg",
+        "width": 564,
+        "height": 1107
     },
     {
         "id": 37,
-        "name": "video7",
-        "type": "mp4",
-        "aspectRatio": 0.5070422535
+        "name": "video7.mp4",
+        "width": 576,
+        "height": 1136,
+        "duration": 43
     },
     {
         "id": 34,
-        "name": "image28",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image28.jpg",
+        "width": 564,
+        "height": 1128
     },
     {
         "id": 35,
-        "name": "image29",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image29.jpg",
+        "width": 564,
+        "height": 1006
     },
     {
         "id": 36,
-        "name": "image30",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image30.jpg",
+        "width": 564,
+        "height": 564
     },
     {
         "id": 38,
-        "name": "image31",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image31.jpg",
+        "width": 552,
+        "height": 881
     },
     {
         "id": 39,
-        "name": "video8",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video8.mp4",
+        "width": 720,
+        "height": 1280,
+        "duration": 12
     },
     {
         "id": 40,
-        "name": "image32",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image32.jpg",
+        "width": 564,
+        "height": 1059
     },
     {
         "id": 41,
-        "name": "image33",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image33.jpg",
+        "width": 564,
+        "height": 1219
     },
     {
         "id": 42,
-        "name": "image34",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image34.jpg",
+        "width": 564,
+        "height": 1003
     },
     {
         "id": 44,
-        "name": "video9",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video9.mp4",
+        "width": 720,
+        "height": 1280,
+        "duration": 57
     },
     {
         "id": 45,
-        "name": "image36",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image36.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 46,
-        "name": "image37",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image37.jpg",
+        "width": 480,
+        "height": 640
     },
     {
         "id": 47,
-        "name": "image38",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image38.jpg",
+        "width": 564,
+        "height": 751
     },
     {
         "id": 48,
-        "name": "video10",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video10.mp4",
+        "width": 720,
+        "height": 1280,
+        "duration": 16
     },
     {
         "id": 49,
-        "name": "image39",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image39.jpg",
+        "width": 564,
+        "height": 982
     },
     {
         "id": 50,
-        "name": "image40",
-        "type": "jpg",
-        "aspectRatio": 0
+        "name": "image40.jpg",
+        "width": 564,
+        "height": 1002
     },
     {
         "id": 51,
-        "name": "video11",
-        "type": "mp4",
-        "aspectRatio": 0.5625
+        "name": "video11.mp4",
+        "width": 720,
+        "height": 1280,
+        "duration": 7
     }
 ]
