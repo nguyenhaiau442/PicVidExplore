@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// WaterfallGrid layout
 struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
     var content: (Int, T) -> Content
     var items: [T]
@@ -26,8 +25,8 @@ struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
             HStack(alignment: .top, spacing: spacing) {
                 ForEach(setUpItems(), id: \.self) { columnData in
                     VStack(spacing: spacing) {
-                        ForEach(columnData) { item in
-                            content(item.id as! Int, item)
+                        ForEach(Array(columnData.enumerated()), id: \.element.id) { index, item in
+                            content(index, item)
                         }
                     }
                 }
