@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     var item: Model
-    @Environment(\.dismiss) private var popView
+    @Environment(\.dismiss) private var dismiss
     private let itemWidth = (AppConstants.screenWidth - 30) / 2
     @State private var items: [Model] = Model.allItem
     @State private var itemHeightCaches: [Int: CGFloat] = [:]
@@ -41,7 +41,7 @@ struct DetailView: View {
     private func makeBackView() -> some View {
         HStack {
             Button(action: {
-                self.popView()
+                self.dismiss()
             }, label: {
                 Image(systemName: "chevron.backward.circle.fill")
                     .renderingMode(.template)

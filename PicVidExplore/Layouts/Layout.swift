@@ -24,7 +24,7 @@ struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
         ScrollView(.vertical, showsIndicators: false) {
             HStack(alignment: .top, spacing: spacing) {
                 ForEach(setUpItems(), id: \.self) { columnData in
-                    LazyVStack(spacing: spacing) {
+                    VStack(spacing: spacing) {
                         ForEach(Array(columnData.enumerated()), id: \.element.id) { index, item in
                             content(index, item)
                         }
