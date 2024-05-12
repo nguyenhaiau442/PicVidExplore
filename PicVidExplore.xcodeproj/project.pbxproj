@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35324C162BF0930C00F2C258 /* UICoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324C152BF0930C00F2C258 /* UICoodinator.swift */; };
 		3599C9C42B385D16003B28FD /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3599C9C32B385D16003B28FD /* AppConstants.swift */; };
 		3599C9C82B3866B6003B28FD /* video12.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3599C9C62B3866B6003B28FD /* video12.mp4 */; };
 		3599C9C92B3866B6003B28FD /* video13.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3599C9C72B3866B6003B28FD /* video13.mp4 */; };
@@ -102,6 +103,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35324C152BF0930C00F2C258 /* UICoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICoodinator.swift; sourceTree = "<group>"; };
 		3599C9C32B385D16003B28FD /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		3599C9C62B3866B6003B28FD /* video12.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video12.mp4; sourceTree = "<group>"; };
 		3599C9C72B3866B6003B28FD /* video13.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video13.mp4; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			children = (
 				35D1B74E2B36CCA600735B07 /* Tab.swift */,
 				35D1B7502B36CCCA00735B07 /* Model.swift */,
+				35324C152BF0930C00F2C258 /* UICoodinator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				35D1B7602B36CE7600735B07 /* HomeView.swift in Sources */,
 				35D1B76C2B36CF9F00735B07 /* ProfileView.swift in Sources */,
 				35D1B7642B36CF2E00735B07 /* DetailView.swift in Sources */,
+				35324C162BF0930C00F2C258 /* UICoodinator.swift in Sources */,
 				35D1B74C2B36CC8E00735B07 /* ViewExtension.swift in Sources */,
 				35D1B76E2B36D1CC00735B07 /* AppDelegate.swift in Sources */,
 				35D1B7682B36CF7200735B07 /* SearchView.swift in Sources */,

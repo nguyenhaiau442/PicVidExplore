@@ -12,12 +12,14 @@ struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
     var items: [T]
     var columns: Int
     var spacing: CGFloat
+    var coordinator: UICoordinator
     
-    init(columns: Int, items: [T], spacing: CGFloat, @ViewBuilder content: @escaping (Int, T) -> Content) {
+    init(columns: Int, items: [T], spacing: CGFloat, coordinator: UICoordinator, @ViewBuilder content: @escaping (Int, T) -> Content) {
         self.items = items
         self.content = content
         self.columns = columns
         self.spacing = spacing
+        self.coordinator = coordinator
     }
     
     var body: some View {
@@ -31,7 +33,10 @@ struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
                     }
                 }
             }
-            .padding(.vertical)
+            .background(ScrollViewExtractor(result: { scrollView in
+                coordinator.scrollView = scrollView
+            }))
+            .padding(.horizontal, 15)
         }
     }
     
@@ -44,4 +49,8 @@ struct Layout<Content: View, T: Identifiable>: View where T: Hashable {
         }
         return gridArray
     }
+}
+
+#Preview {
+    ContentView()
 }
