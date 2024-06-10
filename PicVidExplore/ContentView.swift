@@ -34,7 +34,7 @@ struct ContentView: View {
             CustomTabBar()
         }
         .ignoresSafeArea()
-        //.preferredColorScheme(.light)
+        .preferredColorScheme(.dark)
     }
     
     /// Custom Tab Bar

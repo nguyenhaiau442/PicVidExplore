@@ -22,6 +22,9 @@ class UICoordinator {
     /// Root View Properties
     var hideRootView: Bool = false
     
+    /// Detail View Properties
+    var headerOffset: CGFloat = .zero
+    
     func createVisibleAreaSnapshot() {
         let renderer = UIGraphicsImageRenderer(size: scrollView.bounds.size)
         let image = renderer.image { ctx in
@@ -48,19 +51,21 @@ class UICoordinator {
         } else {
             /// Closing View
             hideLayer = false
-            withAnimation(.easeInOut(duration: 0.3), completionCriteria: .logicallyComplete) {
+            withAnimation(.easeInOut(duration: 0.3), completionCriteria: .removed) {
                 animateView = false
             } completion: {
-                /// Resetting Properties
-                self.resetAnimationProperties()
+                DispatchQueue.main.async {
+                    /// Resetting Properties
+                    self.resetAnimationProperties()
+                }
             }
 
         }
     }
     
     private func resetAnimationProperties() {
+        headerOffset = 0
         hideRootView = false
-        rect = .zero
         selectedItem = nil
         animationLayer = nil
     }
